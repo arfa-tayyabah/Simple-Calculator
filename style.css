@@ -1,6 +1,6 @@
 
 body{
-    background:#ffffffdd;
+    background: #1a1a2e;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,14 +30,18 @@ button{
     color: #3b8585;
     display: grid;
     gap: 12px;
-    width: 349px;
-    height: 300px;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 10px;
+    height: 300px;
+     width: 349px;
     
 }
 button:hover{
     filter: brightness(0.9);
+}
+button:active {
+    transform: scale(0.93);
+    filter: brightness(0.8);
 }
 #display {
     margin-bottom: 20px;
@@ -51,6 +55,7 @@ button:hover{
     font-family: 'Courier New', monospace;
     color: #000000;
     font-weight: bold;
+    outline: none;
     }
 .clear, .operator{
     background-color: rgba(255, 157, 0, 0.781);

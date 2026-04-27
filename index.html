@@ -9,25 +9,25 @@
     <div class="calculator">
         <input type="text" id="display" readonly value = "0">
         <div class="buttons">
-            <button class="brackets">{</button>
-            <button class="brackets">}</button>
-            <button class="operator">%</button>
+            <button class="brackets" onclick="get_input('(')">(</button>
+            <button class="brackets" onclick="get_input(')')">)</button>
+            <button class="backspace" onclick="backspace()">⌫</button>
             <button class="clear" onclick="ClearAll()">C</button> 
-            <button class="number" onclick="input_number('7')">7</button>
-            <button class="number" onclick="input_number('8')">8</button>
-            <button class="number" onclick="input_number('9')">9</button>
-            <button class="operator" onclick="input_operator('*')">x</button>
-            <button class="number" onclick="input_number('4')">4</button>
-            <button class="number" onclick="input_number('5')">5</button>
-            <button class="number" onclick="input_number('6')">6</button>
-            <button class="operator" onclick="input_operator('-')">-</button>
-            <button class="number" onclick="input_number('1')">1</button>
-            <button class="number" onclick="input_number('2')">2</button>
-            <button class="number" onclick="input_number('3')">3</button>
-            <button class="operator" onclick="input_operator('+')">+</button>
-            <button class="number" onclick="input_number('0')">0</button>
-            <button class="operator" onclick="input_number('.')">.</button>
-            <button class="operator" onclick="input_operator('/')">/</button>
+            <button class="number" onclick="get_input('7')">7</button>
+            <button class="number" onclick="get_input('8')">8</button>
+            <button class="number" onclick="get_input('9')">9</button>
+            <button class="operator" onclick="get_input('*')">x</button>
+            <button class="number" onclick="get_input('4')">4</button>
+            <button class="number" onclick="get_input('5')">5</button>
+            <button class="number" onclick="get_input('6')">6</button>
+            <button class="operator" onclick="get_input('-')">-</button>
+            <button class="number" onclick="get_input('1')">1</button>
+            <button class="number" onclick="get_input('2')">2</button>
+            <button class="number" onclick="get_input('3')">3</button>
+            <button class="operator" onclick="get_input('+')">+</button>
+            <button class="number" onclick="get_input('0')">0</button>
+            <button class="operator" onclick="get_input('.')">.</button>
+            <button class="operator" onclick="get_input('/')">/</button>
             <button class="operator" onclick="calculate()">=</button>   
         </div>
     </div>

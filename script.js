@@ -1,61 +1,38 @@
 const display = document.getElementById("display");
 const buttons = document.querySelectorAll("button");
 
-let operand1 = 0;
-let operator = null;
-let screen_output  = 0;
-let nextinput = false;
+let input_string = "0";
+let result_shown = false;
 function update_display()
 {
-    display.value = screen_output;
+    display.value = input_string;
 }
-function input_number(number){
-    if(nextinput) {
-        screen_output = number;
-        nextinput = false;
+function get_input(number){
+    if(result_shown){
+        input_string = "";
+        result_shown = false;
     }
-    else{
-        if(screen_output == "0"){
-        screen_output = number;
-    } 
-    else{
-        screen_output+= number;
+    if(input_string =="0"){
+        input_string = input_string.slice(0, -1);
     }
-    }
+    input_string += number;
     update_display();
 }
-function input_operator(op){
-    if(operator != null)
-        calculate();
-    operand1 = parseFloat(screen_output);
-    operator = op;
-    nextinput = true;
-}
 function calculate(){
-    if (operator == null)
-        return;
-    const operand2 = parseFloat(screen_output);
-    let result;
-    switch(operator){
-        case '+': result = operand1 + operand2;
-        break;
-        case '-': result = operand1 - operand2;
-        break;
-        case '*': result = operand1 * operand2;
-        break;
-        case '/': result = operand1 / operand2;
-        break;
+    try {
+        let result = eval(input_string);
+        input_string = String(result);
+        result_shown = true;
+    } catch(e) {
+        input_string = "Error";
     }
-    screen_output = String(result);
-    operator = null;
-    nextinput = true;
     update_display();
 }
 function ClearAll() {
-    operand1 = null;
-    screen_output = "0";
-    operator = null;
-    nextinput = false;
+    input_string = "0";
     update_display();
 }
-
+function backspace() {
+    input_string = input_string.slice(0, -1);
+    update_display();
+}
