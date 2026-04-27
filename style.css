@@ -5,7 +5,6 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    font-family: 'Segoe UI', system-ui, sans-serif;
 }  
     
 .calculator {
@@ -22,6 +21,8 @@ button{
     border-radius: 5px;
     font-size: x-large;
     cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
 }
 .buttons {
     border-radius: 10px;
@@ -45,6 +46,11 @@ button:hover{
     height: 70px;
     box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
+    text-align: right;
+    font-size: 2.2rem;
+    font-family: 'Courier New', monospace;
+    color: #000000;
+    font-weight: bold;
     }
 .clear, .operator{
     background-color: rgba(255, 157, 0, 0.781);
